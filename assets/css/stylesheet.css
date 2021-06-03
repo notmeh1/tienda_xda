@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&family=Raleway:wght@400;700&display=swap");
 html {
   width: 100%;
   height: 100%;
@@ -5,40 +6,101 @@ html {
   padding: 0;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+header, .main h1, footer {
+  font-family: "Old Standard TT", serif;
+}
+
 .container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-
-.box1 {
-  grid-area: 1/1/2/6;
+  height: 100%;
   width: 100%;
-  height: 100px;
+  grid-template: 45px 1fr 1fr 120px/100%;
+  grid-template-areas: "header" "picture" "main" "footer";
 }
 
-.box1 h1 {
-  margin: 0;
-  width: fit-content;
-  height: 100px;
+@media (min-width: 736px) {
+  .container {
+    grid-template: 45px 1fr 120px/repeat(2, 1fr);
+    grid-template-areas: "header header" "main picture" "footer footer";
+  }
+}
+.header {
+  grid-area: header;
+  background-color: #ffffff;
+}
+
+.header h2 {
   background-color: #000000;
+  width: fit-content;
+  height: 100%;
   color: #ffffff;
+  margin: 0px;
+  padding: 5px;
 }
 
-.box2 {
-  grid-area: 2/1/3/6;
+.picture {
+  grid-area: picture;
   background-image: url(../img/imagen1.png);
   background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
-.box3 {
-  grid-area: 3/1/4/6;
+.main {
+  grid-area: main;
+  background-color: #ffffff;
+  padding: 1em;
 }
 
-.box4 {
-  grid-area: 4/1/5/6;
+.main h1 {
+  margin: 10px 0 0 0;
+}
+
+.main p {
+  margin: 5px 0 15px 0;
+}
+
+.display-flex {
+  display: inline-flex;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #000000;
+  padding: 0 1em;
+}
+.footer__content {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+}
+.footer__content h3 {
+  margin-bottom: 7px;
+}
+.footer__content p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.footer__suscribir {
+  position: absolute;
+  height: 120px;
+  right: 0;
+  background-color: #ffffff;
+  color: #000000;
+  writing-mode: vertical-lr;
+  text-align: center;
+}
+.footer__suscribir h3 {
+  margin: 0 8px;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
