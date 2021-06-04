@@ -13,12 +13,22 @@
         grid-template: 45px 1fr 1fr 1fr 120px / 100%;
         grid-template-areas: "header" "picture" "picture" "main" "footer";
     }
+    .main h1 {
+        font-size: 1.8em;
+    }
 }
 
 @media (min-width: 768px) {
     .container {
         grid-template: 45px 1fr 1fr 1fr 1fr 120px / 100%;
         grid-template-areas: "header" "picture" "picture" "picture" "main" "footer";
+    }
+    .main h1 {
+        font-size: 2.3em;
+        width: 500px;
+    }
+    .main p {
+        width: 500px;
     }
 }
 
@@ -27,7 +37,15 @@
     grid-template: 45px 1fr 1fr 120px / repeat(2, 1fr);
     grid-template-areas: "header header" "main picture" "main picture" "footer picture";
   }
+    .main h1 {
+    font-size: 2.8em;
+    width: 350px;
 }
+    .main p {
+    width: 500px;
+}
+}
+
   .header {
     display: flex;
     grid-area: header;
@@ -164,7 +182,7 @@
   }
 
   .main h1 {
-      margin: 10px 0 0 0;
+    margin: 10px 0 0 0;
   }
 
   .main p {
