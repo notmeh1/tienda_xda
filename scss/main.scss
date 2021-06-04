@@ -7,20 +7,66 @@
     width: 100%;
     grid-template: 45px 1fr 1fr 120px / 100%;
     grid-template-areas: "header" "picture" "main" "footer";
-  }
+}
 
-  @media (min-width: 736px) {
+
+@media (min-width: 1024px) {
     .container {
-      grid-template: 45px 1fr 120px / repeat(2, 1fr);
-      grid-template-areas: "header header" "main picture" "footer footer";
-    }
+    grid-template: 45px 1fr 120px / repeat(2, 1fr);
+    grid-template-areas: "header header" "main picture" "footer picture";
   }
-
+}
   .header {
     display: flex;
     grid-area: header;
     background-color: #ffffff;
   }
+
+  .logo {
+    background-color: #000000;
+    width: 75px;
+    height: 100%;
+  }
+
+  .logo a {
+      text-decoration: none;
+  }
+
+  .logo h2 {
+    color: #ffffff;
+    margin: 8px 0 8px 0;
+    text-align: center;
+  }
+
+  .navbar {
+    position: absolute;
+    right: 0;
+    visibility: hidden;
+  }
+
+  .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+  }
+
+  .navbar li {
+      float: left;
+  }
+
+  .navbar li:hover{
+      background-color: lightgray
+  }
+
+  .navbar li a {
+      display: inline-flex;
+      text-decoration: none;
+      font-weight: 700;
+      color: #000000;
+      margin: 5px;
+      padding: 8px;
+  }
+
   .sidebar {
     height: 100%;
     width: 0;
@@ -34,6 +80,24 @@
     padding-top: 60px;
   }
   
+  @media screen and (max-height: 450px) {
+    .sidebar {
+    padding-top: 15px;
+    }
+    .sidebar a {
+    font-size: 18px;
+    }
+}
+
+  @media (min-width: 768px) {
+    .openbtn {
+        visibility: hidden;
+    }
+    .navbar {
+        visibility: visible;
+    }
+
+  }
   .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -72,30 +136,13 @@
   #master {
     transition: margin-left .5s;
   }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }
-  .logo {
-    background-color: #000000;
-    width: 75px;
-    height: 100%;
-  }
-
-  .logo h2 {
-    color: #ffffff;
-    margin: 8px 0 8px 0;
-    text-align: center;
-  }
 
   .picture {
     grid-area: picture;
     background-image: url(../img/imagen1.png);
     background-size: cover;
     width: 100%;
-    height: 100%;
+    max-height: auto;
   }
 
   .main {
@@ -132,27 +179,28 @@
       display: inline-flex;
   }
   .footer {
-    position: fixed;
+    position: relative;
     width: 100%;
     grid-area: footer;
     background-color: #000000;
-    padding: 0 1em;
-    bottom: 0px;
     &__content {
         width: 100%;
         height: 100%;
         color: #ffffff;
     }
     &__content h3 {
+        margin-left: 1em;
         margin-bottom: 7px;
     }
     &__content p {
         margin-top: 0;
+        margin-left: 1em;
         margin-bottom: 5px;
     }
     &__content input {
         width: 230px;
         height: 25px;
+        margin-left: 1em;
         margin-bottom: 6px;
     }
     ::placeholder {
@@ -160,8 +208,8 @@
     }
     &__suscribir {
         position: absolute;
-        width: 70px;
-        height: 110px;
+        width: 50px;
+        height: 120px;
         right: 0;
         background-color: #ffffff;
         color: #000000;
@@ -176,3 +224,4 @@
         margin: 0 8px;
     }
   }
+
